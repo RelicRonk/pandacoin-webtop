@@ -1,7 +1,7 @@
 ARG BASE_IMAGE=lscr.io/linuxserver/webtop:debian-xfce
 FROM ${BASE_IMAGE}
 
-ENV APP_VERSION=4.11.9
+ENV APP_VERSION=4.11.10
 ENV ARCH=x86_64
 ENV APP_NAME=pandacoin
 ENV TARBALL_URL="https://gitlab.com/api/v4/projects/25484413/packages/generic/pandacoin/pandacoin-v${APP_VERSION}pnd/${APP_NAME}-${APP_VERSION}-${ARCH}-linux-gnu.tar.gz"
@@ -18,14 +18,14 @@ WORKDIR /tmp
 RUN curl -L -o ${TARBALL_NAME} ${TARBALL_URL} && \
     tar xzf ${TARBALL_NAME}
 
-RUN install -Dm755 pandacoin-4.11.9/bin/pandacoin-qt /usr/local/bin/pandacoin-qt && \
-    install -Dm755 pandacoin-4.11.9/bin/pandacoin-wallet /usr/local/bin/pandacoin-wallet && \
-    install -Dm755 pandacoin-4.11.9/bin/pandacoind /usr/local/bin/pandacoind && \
-    install -Dm755 pandacoin-4.11.9/bin/pandacoin-cli /usr/local/bin/pandacoin-cli && \
-    install -Dm755 pandacoin-4.11.9/bin/pandacoin-tx /usr/local/bin/pandacoin-tx && \
+RUN install -Dm755 pandacoin-4.11.10/bin/pandacoin-qt /usr/local/bin/pandacoin-qt && \
+    install -Dm755 pandacoin-4.11.10/bin/pandacoin-wallet /usr/local/bin/pandacoin-wallet && \
+    install -Dm755 pandacoin-4.11.10/bin/pandacoind /usr/local/bin/pandacoind && \
+    install -Dm755 pandacoin-4.11.10/bin/pandacoin-cli /usr/local/bin/pandacoin-cli && \
+    install -Dm755 pandacoin-4.11.10/bin/pandacoin-tx /usr/local/bin/pandacoin-tx && \
     mkdir -p /usr/local/lib && \
-    install -Dm755 pandacoin-4.11.9/lib/libpandacoinconsensus.so.0 /usr/local/lib/libpandacoinconsensus.so.0 && \
-    install -Dm755 pandacoin-4.11.9/lib/libpandacoinconsensus.so.0.0.0 /usr/local/lib/libpandacoinconsensus.so.0.0.0 && \
+    install -Dm755 pandacoin-4.11.10/lib/libpandacoinconsensus.so.0 /usr/local/lib/libpandacoinconsensus.so.0 && \
+    install -Dm755 pandacoin-4.11.10/lib/libpandacoinconsensus.so.0.0.0 /usr/local/lib/libpandacoinconsensus.so.0.0.0 && \
     ln -sf /usr/local/lib/libpandacoinconsensus.so.0.0.0 /usr/local/lib/libpandacoinconsensus.so
 
 RUN ldconfig
