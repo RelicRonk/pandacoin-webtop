@@ -1,4 +1,4 @@
-ARG BASE_IMAGE=lscr.io/linuxserver/webtop:debian-xfce
+ARG BASE_IMAGE=lscr.io/linuxserver/webtop:ubuntu-xfce
 FROM ${BASE_IMAGE}
 
 ENV APP_VERSION=4.11.10
@@ -8,7 +8,7 @@ ENV TARBALL_URL="https://gitlab.com/api/v4/projects/25484413/packages/generic/pa
 ENV TARBALL_NAME="${APP_NAME}-${APP_VERSION}-${ARCH}-linux-gnu.tar.gz"
 
 RUN apt-get update && \
-    apt-get install -y curl && \
+    apt-get install -y curl wget nano && \
     rm -rf /var/lib/apt/lists/*
 
 EXPOSE 22445 33445 44445
@@ -42,3 +42,5 @@ RUN mkdir -p /config/Desktop /config/.pandacoin && \
     chown -R 911:911 /config/Desktop /config/.pandacoin
 
 RUN rm -rf /tmp/*
+
+run wget https://github.com/DigitalPandacoin/Pandacoin-multiwallet-DEX/releases/download/0.8.2/Pandacoin-multiwallet-DEX-linux-5818b30-x86_64.AppImage
