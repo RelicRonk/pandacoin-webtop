@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Pandacoin DEX
+Comment=Pandacoin Multiwallet DEX
+Exec=/bin/pandacoin-multiwallet/AppRun --no-sandbox
+Type=Application
+Icon=/bin/pandacoin-multiwallet/dex-logo-64.png
+Terminal=false
+Categories=Application;Network;

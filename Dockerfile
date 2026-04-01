@@ -40,7 +40,12 @@ RUN mkdir -p /config/Desktop /config/.pandacoin && \
     cp /usr/share/applications/pandacoin*.desktop /config/Desktop/ && \
     chmod +x /config/Desktop/pandacoin*.desktop && \
     chown -R 911:911 /config/Desktop /config/.pandacoin
-
+	
+ADD https://github.com/DigitalPandacoin/Pandacoin-multiwallet-DEX/releases/download/0.8.2/Pandacoin-multiwallet-DEX-linux-5818b30-x86_64.AppImage /bin/pandacoin-multiwallet.AppImage
+RUN chmod +x /bin/pandacoin-multiwallet.AppImage
+RUN cd /bin && ./pandacoin-multiwallet.AppImage --appimage-extract
+RUN mv /bin/squashfs-root /bin/pandacoin-multiwallet
+COPY pandacoin-multiwallet.desktop /usr/share/applications/pandacoin-multiwallet.desktop
+RUN cp /usr/share/applications/pandacoin-multiwallet.desktop /config/Desktop/pandacoin-multiwallet.desktop
+RUN chmod +x /usr/share/applications/pandacoin-multiwallet.desktop
 RUN rm -rf /tmp/*
-
-run wget https://github.com/DigitalPandacoin/Pandacoin-multiwallet-DEX/releases/download/0.8.2/Pandacoin-multiwallet-DEX-linux-5818b30-x86_64.AppImage
