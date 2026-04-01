@@ -23,7 +23,7 @@ docker run -d  --name=pndwebtop-container /
 --restart unless-stopped /  
 pndwebtop
 
-your PUID and PGID must match your users info that starts the docker, to get this info type "pwd"
+your PUID and PGID must match your users info that starts the docker, to get this info type "id"
 
 once you start the project it can be accessed via https://HOST:3001
 
