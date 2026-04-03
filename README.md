@@ -7,13 +7,21 @@ Getting Started
 with a fresh vps, for debian or ubuntu first you want
 
 apt update && apt upgrade
+
 curl -fsSL https://get.docker.com -o get-docker.sh
+
 sh get-docker.sh
+
 adduser Username
+
 usermod -aG docker Username
+
 su Username
+
 cd ~
+
 git clone https://github.com/RelicRonk/pandacoin-webtop
+
 
 After you clone the repo and have docker installed, navigate to the pandacoin-webtop directory and execute the following commands.
 
