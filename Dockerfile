@@ -8,7 +8,7 @@ ENV TARBALL_URL="https://gitlab.com/api/v4/projects/25484413/packages/generic/pa
 ENV TARBALL_NAME="${APP_NAME}-${APP_VERSION}-${ARCH}-linux-gnu.tar.gz"
 
 RUN apt-get update && \
-    apt-get install -y curl wget nano && \
+    apt-get install -y curl fuse wget nano && \
     rm -rf /var/lib/apt/lists/*
 
 EXPOSE 22445 33445 44445
