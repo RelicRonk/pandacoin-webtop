@@ -4,7 +4,7 @@ In the coming days we will be compiling a guide on how to deploy this on your lo
 
 
 Getting Started
-with a fresh vps, for debian or ubuntu first you want
+with a fresh vps, for Debian or Ubuntu first you want
 
 apt update && apt upgrade
 
