@@ -14,27 +14,20 @@ update the source list and upgrade the everything.
 Then you want to download the docker install file and execute it. 
 	curl -fsSL https://get.docker.com -o get-docker.sh && sh get-docker.sh
 
-
 Next you want to create a user and add it to the docker group.
 	adduser Username
 	usermod -aG docker Username
 
-
 Now you can take control of that user with the following.	
 	su Username && cd ~
-	
-	
+		
 Clone the pandacoin webtop github repo.
 	git clone https://github.com/RelicRonk/pandacoin-webtop
 
-
-
 After you clone the repo and have docker installed, navigate to the pandacoin-webtop directory and execute the following commands.
-
 
 Build The docker
 	docker build -t pndwebtop .
-
 
 Use this command to start the docker.
 	docker run -d  --name=pndwebtop-container /
@@ -48,29 +41,21 @@ Use this command to start the docker.
 	--shm-size="3gb" /  
 	--restart unless-stopped /  
 	pndwebtop
-	
-	
+		
 to stop a docker container you first have to get the ID of the container using the following 
 	docker ps -a
-
 
 Then you would issue the stop command
 	docker stop #ID
 
-
 to remove the container to start a fresh build you would
 	docker stop #ID
-	
-	
+		
 to remove a docker built image first find the image id with the following
 	docker images
-	
-	
-	
+		
 then you would issue the following to delete the docker image..
 	docker rmi #ID
-
-
 
 your PUID and PGID must match your users info that starts the docker, to get this info type "id"
 
