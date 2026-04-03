@@ -35,7 +35,7 @@ Build The docker
 	
 	docker build -t pndwebtop .
 
-Use this command to start the docker.
+Use this command to start the docker. change shm-size properly for your setup.
 	
 	docker run -d  --name=pndwebtop-container /
 	-e PASSWORD=CHANGEME / 
